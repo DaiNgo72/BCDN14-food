@@ -1,4 +1,4 @@
-const foods = [
+let foods = [
     {
         id: "1",
         name: "rau",
@@ -47,8 +47,8 @@ function renderFoods() {
                     <td>${food.discountPrice} <sup>vnđ<sup></td>
                     <td>${food.isAvailable ? "còn hàng" : "hết hàng"}</td>
                     <td>    
-                    <button>delete</button>
-                    <button>edit</button>
+                        <button onclick="handleDeleteFood( '${food.id}' )">delete</button>
+                        <button>edit</button>
                     </td>
                 </tr>
             `
@@ -104,3 +104,36 @@ function addFood() {
     // render lại table
     renderFoods();
 }
+
+function handleDeleteFood(foodId) {
+    console.log("Food id:::", foodId);
+
+    /**
+     * Hỏi người có chắc chắn muốn xóa hay không trước khi thực hiện xóa sản phẩm.
+     */
+    const isConfirm = confirm("Bạn có chắc chắn muốn xóa hay không?")
+    if (!isConfirm) return;
+
+    /**
+     * Sau khi filter xong thì nó sẽ trả về cho chúng ta một mảng mới
+     * và chúng ta gán mảng mới đó vào biến foods
+     */
+    foods = foods.filter(
+        function (food) {
+            // ctrl + i
+
+            /**
+             * Chú ý kiểu dữ liệu
+             */
+            return String(food.id) !== String(foodId);
+        }
+    )
+
+    // Sau khi xóa thành công thì render lại table
+    renderFoods();
+}
+
+// let nums = [1, 2, 3, 4];
+// nums.splice(1, 1);
+// console.log(abc === 2);
+// console.log(nums);// 1,3,4

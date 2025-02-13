@@ -31,6 +31,12 @@
     />
     <link rel="stylesheet" href="../../assets/css/foodList.css" />
 
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -302,7 +308,12 @@
 
               <div class="mb-3">
                 <label for="moTa">Mô Tả</label>
-                <textarea name="mota" class="form-control" id="moTa" rows="3"></textarea>
+                <textarea
+                  name="mota"
+                  class="form-control"
+                  id="moTa"
+                  rows="3"
+                ></textarea>
                 <div id="invalidMoTa" class="invalid-form"></div>
               </div>
               <div class="modal-footer">
@@ -316,7 +327,12 @@
                 <button type="button" class="btn btn-warning" id="btnCapNhat">
                   Cập Nhật
                 </button>
-                <button type="button" class="btn btn-warning" id="btnThemMon" onclick="addFood()">
+                <button
+                  type="button"
+                  class="btn btn-warning"
+                  id="btnThemMon"
+                  onclick="addFood()"
+                >
                   Thêm
                 </button>
               </div>
@@ -328,6 +344,12 @@
     <script src="../../assets/lib/js/Jquery/jquery-3.5.1.slim.min.js"></script>
     <script src="../../assets/lib/js/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Toast -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
 
     <script type="module" src="../controllers/v2/main-v2.js"></script>
 
