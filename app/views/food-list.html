@@ -138,7 +138,8 @@
                 type="button"
                 class="btn btn-warning mb-3 text-white"
                 data-toggle="modal"
-                data-target="#exampleModal"
+                data-target="#add-food"
+                onclick="onAddFood()"
               >
                 Thêm Món Ăn
               </button>
@@ -190,12 +191,18 @@
   </footer> -->
 
     <!-- Modal -->
+    <!-- 
+      data-backdrop: không cho phép click ra ngoài để tắt modal
+      data-keyboard: không cho phép nhấn phím esc để tắt modal
+     -->
     <div
       class="modal fade"
-      id="exampleModal"
+      id="add-food"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
+      data-backdrop="static"
+      data-keyboard="false"
     >
       <div class="modal-dialog">
         <div class="modal-content">
@@ -203,7 +210,7 @@
             <h5 class="modal-title" id="exampleModalLabel">Thêm Món Ăn</h5>
             <button
               type="button"
-              class="close"
+              class="close close-modal"
               data-dismiss="modal"
               aria-label="Close"
             >
@@ -319,12 +326,18 @@
               <div class="modal-footer">
                 <button
                   type="button"
-                  class="btn btn-secondary"
+                  class="btn btn-secondary close-modal"
                   data-dismiss="modal"
                 >
                   Close
                 </button>
-                <button type="button" class="btn btn-warning" id="btnCapNhat">
+                <button
+                  type="button"
+                  class="btn btn-warning"
+                  id="btnCapNhat"
+                  onclick="handleUpdate()"
+                  data-dismiss="modal"
+                >
                   Cập Nhật
                 </button>
                 <button
